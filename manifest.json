@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Profile Lock",
+    "description": "Lock your Chrome profile with a password",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "options_page": "options.html",
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+}
